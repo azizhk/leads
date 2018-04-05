@@ -541,25 +541,25 @@ Authentication keys are environment specific. Make sure you are using <code>Stag
 <td>source</td>
 <td>String</td>
 <td>-</td>
-<td>‘google’, ‘fb’, etc mainly for marketing vendors</td>
-</tr>
-<tr>
-<td>placement</td>
-<td>String</td>
-<td>-</td>
-<td>‘placement of the ad ‘city page top’, ‘search page bottom’</td>
+<td><code>google</code>, <code>facebook</code>, <code>affiliate</code>, <code>emailer</code>, <code>linkedin</code>, <code>portals</code>,<code>twitter</code>, etc - this field should always contain primary origin or lead</td>
 </tr>
 <tr>
 <td>sub_source</td>
 <td>String</td>
 <td>-</td>
-<td>‘display’, ‘sem’ etc can be used to pass on the sub source for digital campaigns.</td>
+<td><code>google_display</code>, <code>google_search</code>, <code>facebook_brands</code>, <code>facebook_lead_gen</code>, <code>affiliate</code>  - this should identify the type of campaign either branding or performance</td>
+</tr>
+<tr>
+<td>placement</td>
+<td>String</td>
+<td>-</td>
+<td><code>utm_campaign</code> , <code>affiliate_name</code> e.g. taboola, nestoria, polyvalent, times_of_india, <code>portal_name</code> e.g. 99acres, magicbricks, housing  - this should tell exact campaign details be it google facebook etc. generally you should pass utm_campaign in this</td>
 </tr>
 <tr>
 <td>extra_details</td>
 <td>JSON</td>
 <td>-</td>
-<td>key-value pair which will contain any extra details for lead e.g. {&quot;utm_campaign: &quot;something&quot;, &quot;utm_source&quot;: &quot;something&quot;}</td>
+<td>key-value pair which will contain any extra details for lead e.g. {&quot;utm_medium: &quot;something&quot;, &quot;utm_source&quot;: &quot;something&quot;, &quot;keyword&quot;: &quot;targetted keyword on google for the campaign&quot;}</td>
 </tr>
 <tr>
 <td>campaign_id</td>
