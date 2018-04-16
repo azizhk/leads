@@ -239,6 +239,14 @@
               </ul>
           </li>
           <li>
+            <a href="#lead-source-and-sub-sources-api" class="toc-h1 toc-link" data-title="lead-source-and-sub-sources-api">Lead Source and Sub Sources API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#https-lead-anarock-com-api-v0-source-metadata" class="toc-h2 toc-link" data-title="a-target-_blank-href-https-lead-anarock-com-api-v0-source-metadata-https-lead-anarock-com-api-v0-source-metadata-a"><a target="_blank" href="https://lead.anarock.com/api/v0/source-metadata">https://lead.anarock.com/api/v0/source-metadata</a></a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
@@ -567,6 +575,18 @@ Authentication keys are environment specific. Make sure you are using <code>Stag
 <td>True</td>
 <td>The is a unique identifier for the project you are sending the lead for. Should be collected from point of contact in ANAROCK team. Without this lead attribution will be incorrect.</td>
 </tr>
+<tr>
+<td>source_id</td>
+<td>Integer</td>
+<td>True</td>
+<td>This is mandatory field for sending any lead. This helps categorization of leads based on different sources. Refer to <a href="/leads?#lead-source-and-sub-sources-api"> Lead Source Sub Source API</a></td>
+</tr>
+<tr>
+<td>sub_source_id</td>
+<td>Integer</td>
+<td>True</td>
+<td>This is mandatory field for sending any lead. This helps categorization of leads based on different sub_sources. Refer to <a href="/leads?#lead-source-and-sub-sources-api"> Lead Source Sub Source API</a></td>
+</tr>
 </tbody></table>
 
 <aside class="success">
@@ -590,6 +610,33 @@ Remember — without proper <code>campaign_id</code>, leads will not be attribut
 <td><a href="https://www.npmjs.com/package/awesome-phonenumber">https://www.npmjs.com/package/awesome-phonenumber</a></td>
 </tr>
 </tbody></table>
+<h1 id='lead-source-and-sub-sources-api'>Lead Source and Sub Sources API</h1><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="c1">// shows that lead is generated from google
+</span><span class="nv">$source_id</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">// shows that lead is generated from google GDN.
+</span><span class="nv">$sub_source_id</span> <span class="o">=</span> <span class="mi">8</span> 
+
+<span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;source_id="</span><span class="o">.</span><span class="nv">$source_id</span><span class="p">;</span>
+<span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;sub_source_id="</span><span class="o">.</span><span class="nv">$sub_source_id</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">source_id</span> <span class="p">:</span> <span class="mi">1</span> <span class="c1">// shows that lead is generated from google</span>
+<span class="kr">const</span> <span class="nx">sub_source_id</span> <span class="p">:</span> <span class="mi">8</span> <span class="c1">// shows that lead is generated from google GDN.</span>
+
+<span class="p">{</span>
+  <span class="nl">source_id</span> <span class="p">:</span> <span class="mi">1</span> 
+  <span class="nx">sub_source_id</span><span class="p">:</span> <span class="mi">8</span>
+<span class="p">}</span>
+</code></pre>
+<p>Its very important to categorize lead depending upon the source and sub source for better understanding of performance and analysis of over all marketting channels.</p>
+
+<p>While posting a lead the parameters should also have a source_id and sub_source_id as fields.</p>
+
+<p>The values for which can be accessed from this API. </p>
+<h3 id='https-lead-anarock-com-api-v0-source-metadata'><a target="_blank" href="https://lead.anarock.com/api/v0/source-metadata">https://lead.anarock.com/api/v0/source-metadata</a></h3>
+<p>Example - If a lead is been generated from google GDN then </p>
+
+<aside class="success">
+Remember — without proper <code>source_id</code> and <code>sub_source_id</code>, leads will not be attributed to the correct sources. If you are running campaign on a new source and it's not present in the API, please contact Anarock team for the same.
+</aside>
 <h1 id='errors'>Errors</h1>
 <p>The Sync Lead API follows given error codes.</p>
 
