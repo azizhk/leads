@@ -400,7 +400,7 @@ You must test first with <code>staging KEY</code> and then only put in <code>pro
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>staging</code></p>
 
-<p><code>POST https://lead.staging.anarock.com/api/v0/CHANNEL_NAME/sync-lead</code></p>
+<p><code>POST https://lead-webhook.staging.anarock.com/api/v0/CHANNEL_NAME/sync-lead</code></p>
 
 <p>``</p>
 
@@ -651,7 +651,7 @@ Remember — without proper <code>source_id</code> and <code>sub_source_id</code
 
 <span class="nv">$phone</span> <span class="o">=</span> <span class="mi">9999999999</span> <span class="c1">// Phone number to test
 </span>
-<span class="nv">$api_url</span> <span class="o">=</span> <span class="s2">"https://lead.staging.anarock.com/api/v0/CHANNEL_NAME/last-lead-data?phone="</span><span class="o">+</span><span class="nv">$phone</span><span class="o">+</span><span class="s2">"&amp;current_time="</span><span class="o">+</span><span class="nv">$current_time</span><span class="o">+</span><span class="s2">"&amp;hash="</span><span class="o">+</span><span class="nv">$hash</span>
+<span class="nv">$api_url</span> <span class="o">=</span> <span class="s2">"https://lead-webhook.staging.anarock.com/api/v0/CHANNEL_NAME/last-lead-data?phone="</span><span class="o">+</span><span class="nv">$phone</span><span class="o">+</span><span class="s2">"&amp;current_time="</span><span class="o">+</span><span class="nv">$current_time</span><span class="o">+</span><span class="s2">"&amp;hash="</span><span class="o">+</span><span class="nv">$hash</span>
 
 <span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
@@ -669,7 +669,7 @@ Remember — without proper <code>source_id</code> and <code>sub_source_id</code
 
 <span class="nx">axios</span><span class="p">({</span>
   <span class="na">method</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s2">`https://lead.staging.anarock.com/api/v0/CHANNEL_NAME/last-lead-data?phone=</span><span class="p">${</span><span class="nx">phone</span><span class="p">}</span><span class="s2">&amp;current_time=</span><span class="p">${</span><span class="nx">timeStamp</span><span class="p">}</span><span class="s2">&amp;hash=</span><span class="p">${</span><span class="nx">hash</span><span class="p">}</span><span class="s2">`</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s2">`https://lead-webhook.staging.anarock.com/api/v0/CHANNEL_NAME/last-lead-data?phone=</span><span class="p">${</span><span class="nx">phone</span><span class="p">}</span><span class="s2">&amp;current_time=</span><span class="p">${</span><span class="nx">timeStamp</span><span class="p">}</span><span class="s2">&amp;hash=</span><span class="p">${</span><span class="nx">hash</span><span class="p">}</span><span class="s2">`</span>
 <span class="p">})</span>
 
 </code></pre>
@@ -702,7 +702,7 @@ Remember — without proper <code>source_id</code> and <code>sub_source_id</code
 
 <p><code>staging</code></p>
 
-<p><code>https://lead.staging.anarock.com/api/v0/CHANNEL_NAME/last-lead-data?phone=PHONE_NUMBER&amp;current_time=CURRENT_TIME&amp;hash=HASH</code></p>
+<p><code>https://lead-webhook.staging.anarock.com/api/v0/CHANNEL_NAME/last-lead-data?phone=PHONE_NUMBER&amp;current_time=CURRENT_TIME&amp;hash=HASH</code></p>
 
 <p><code>production</code></p>
 
